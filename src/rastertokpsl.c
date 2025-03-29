@@ -468,7 +468,7 @@ int rastertokpsl(cups_raster_t *ras, const char *user, const char *title, int co
         cups_page_header2_t header;       /* Page header from file */
         //ppd_file_t *ppd;                /* PPD file - not used in the rastertokpsl anymore */
 
-        sigset(SIGTERM, CancelJob);
+        signal(SIGTERM, CancelJob);
 
         /*
          * Make sure status messages are not buffered...
