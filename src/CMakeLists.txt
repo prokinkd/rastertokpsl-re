@@ -9,4 +9,5 @@ set(SOURCE_FILES
         main.c)
 
 add_executable(rastertokpsl-re ${SOURCE_FILES})
-target_link_libraries(rastertokpsl-re ${CUPS_LIB} ${CUPSIMAGE_LIB})
+target_link_libraries(rastertokpsl-re ${CUPS_LIB} ${CUPSIMAGE_LIB} -lm)
+
