@@ -8,3 +8,4 @@
 *.pdf
 # bin files
 bin/*
+_build
