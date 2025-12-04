@@ -9,7 +9,7 @@ The problem in the non ASCII encoding of the file names for printed files.
 
  - [x] make it possible to build on Linux (at least on Devuan)
  - [x] add some other ppd files
- - [ ] create a list of required packages
+ - [x] create a list of required packages
  - [ ] update main readme (add requirements and manual for buiding the driver)
  - [ ] improve CmakeLists (maybe not)
 
@@ -21,14 +21,21 @@ _(**Note**: currently there is only one entry (for Debian and Devuan), and it's 
 
 #### Devuan|Debian
 
+* `build-essential`
+* `cmake`
 * `libcupsimage2-dev`
 * `libcups2-dev`
 
 # Instructions
 
-1. Run `cmake -B_build -H.` to generate nessesary files  _(**Note**: there are cmake variables listed at the end of the section)_;
-2. Run `cmake --build _build/` to build all cmake targets, the resulting binaries are located in `bin/` subdirectory.
-3. Run `./install.sh` to install PPD files and the newly built filter.
+If you have pre-built release (bin folder is already there), proceed from step 4.
+
+
+1. Run `apt-get install build-essential cmake libcups2-dev libcupsimage2-dev` to install build prerequisites.
+2. Run `cmake -B_build -H.` to generate nessesary files  _(**Note**: there are cmake variables listed at the end of the section)_;
+3. Run `cmake --build _build/` to build all cmake targets, the resulting binaries are located in `bin/` subdirectory.
+4. Run `./install.sh` to install PPD files and the newly built filter.
+5. Run `apt-get install libcupsimage2` (Debian 12) or `apt-get install libcupsimage2t64` (Debian 13) on end user systems, for filter to work.
 
 ### Cmake variables
 
